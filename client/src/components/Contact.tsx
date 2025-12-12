@@ -1,59 +1,68 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Phone } from "lucide-react";
+import { Mail, Linkedin, Phone, Send } from "lucide-react";
+import bgImg from "@assets/generated_images/neon_cyber_gradient_background.png";
 
 export default function Contact() {
   return (
-    <footer id="contact" className="bg-foreground text-background py-24 md:py-32 relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl">
-          <motion.h2
+    <footer id="contact" className="relative py-32 overflow-hidden">
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm z-10" />
+        <img src={bgImg} alt="bg" className="w-full h-full object-cover" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-tighter mb-12"
           >
-            Let's <br/>
-            <span className="text-white/20">Connect</span>
-          </motion.h2>
+            <h2 className="font-display text-6xl md:text-8xl font-bold mb-8">
+              Let's Create <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500">
+                Magic
+              </span>
+            </h2>
+            <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto">
+              Ready to elevate your digital presence? Reach out and let's discuss how we can build something extraordinary together.
+            </p>
 
-          <div className="grid md:grid-cols-2 gap-12 mt-20">
-            <div className="space-y-8">
-              <h3 className="font-mono text-sm uppercase tracking-widest text-white/50">Contact Info</h3>
-              <div className="space-y-4">
-                <a href="mailto:deepakpassi574@gmail.com" className="flex items-center gap-4 text-xl hover:text-white/70 transition-colors group">
-                  <div className="p-3 border border-white/20 rounded-full group-hover:bg-white group-hover:text-black transition-all">
-                    <Mail size={20} />
-                  </div>
-                  deepakpassi574@gmail.com
-                </a>
-                <a href="tel:+917028334796" className="flex items-center gap-4 text-xl hover:text-white/70 transition-colors group">
-                  <div className="p-3 border border-white/20 rounded-full group-hover:bg-white group-hover:text-black transition-all">
-                    <Phone size={20} />
-                  </div>
-                  +91 7028334796
-                </a>
-                <a href="https://linkedin.com/in/omshankarpassi" target="_blank" className="flex items-center gap-4 text-xl hover:text-white/70 transition-colors group">
-                  <div className="p-3 border border-white/20 rounded-full group-hover:bg-white group-hover:text-black transition-all">
-                    <Linkedin size={20} />
-                  </div>
-                  linkedin.com/in/omshankarpassi
-                </a>
-              </div>
-            </div>
+            <div className="flex flex-wrap justify-center gap-6 mb-20">
+              <a 
+                href="mailto:deepakpassi574@gmail.com"
+                className="group relative px-8 py-4 rounded-full bg-white text-black font-bold flex items-center gap-3 overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <Mail className="w-5 h-5" /> deepakpassi574@gmail.com
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity z-0" />
+                <span className="relative z-10 group-hover:text-white transition-colors"></span>
+              </a>
 
-            <div className="space-y-8 md:text-right flex flex-col justify-end">
-               <h3 className="font-mono text-sm uppercase tracking-widest text-white/50">Education</h3>
-               <div>
-                <p className="text-xl font-bold">Bachelor in Computer Application</p>
-                <p className="text-white/60">MES Vasant Joshi College (2023–2026)</p>
-               </div>
+              <a 
+                href="https://linkedin.com/in/omshankarpassi"
+                target="_blank"
+                className="px-8 py-4 rounded-full glass-panel border border-white/20 hover:bg-white/10 transition-colors font-bold flex items-center gap-3"
+              >
+                <Linkedin className="w-5 h-5 text-[#0077b5]" /> LinkedIn
+              </a>
+
+              <a 
+                href="tel:+917028334796"
+                className="px-8 py-4 rounded-full glass-panel border border-white/20 hover:bg-white/10 transition-colors font-bold flex items-center gap-3"
+              >
+                <Phone className="w-5 h-5 text-green-500" /> +91 7028334796
+              </a>
             </div>
-          </div>
+          </motion.div>
         </div>
         
-        <div className="mt-32 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-white/40 font-mono">
-          <p>© 2025 Omshankar Passi. All rights reserved.</p>
-          <p>Designed with Architectural Precision.</p>
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
+          <p>© 2025 Omshankar Passi. Crafted with ❤️ & ☕</p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+             <span>Education: BCA (MES Vasant Joshi College)</span>
+          </div>
         </div>
       </div>
     </footer>

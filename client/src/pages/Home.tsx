@@ -11,7 +11,7 @@ export default function Home() {
     <motion.div 
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
-      className="bg-background min-h-screen selection:bg-black selection:text-white"
+      className="bg-background min-h-screen text-foreground overflow-x-hidden"
     >
       <Navbar />
       <Hero />
