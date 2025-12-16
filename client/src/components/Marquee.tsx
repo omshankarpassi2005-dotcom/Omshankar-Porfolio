@@ -13,7 +13,11 @@ export default function Marquee() {
         {[...Array(10)].map((_, i) => (
           <div key={i} className="flex items-center gap-12">
             <span className="text-4xl md:text-6xl font-display font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-white/20 to-white/5">
-              Digital Strategy
+              Digital Marketing
+            </span>
+            <span className="text-2xl text-accent">★</span>
+            <span className="text-4xl md:text-6xl font-display font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-white/20 to-white/5">
+              social Management
             </span>
             <span className="text-2xl text-accent">★</span>
             <span className="text-4xl md:text-6xl font-display font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-white/20 to-white/5">
@@ -21,7 +25,11 @@ export default function Marquee() {
             </span>
             <span className="text-2xl text-accent">★</span>
             <span className="text-4xl md:text-6xl font-display font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-white/20 to-white/5">
-              Brand Identity
+              Multimidia & Graphic Designer
+            </span>
+            <span className="text-2xl text-accent">★</span>
+            <span className="text-4xl md:text-6xl font-display font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-white/20 to-white/5">
+              Artist
             </span>
             <span className="text-2xl text-accent">★</span>
           </div>
